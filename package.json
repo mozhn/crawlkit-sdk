@@ -1,0 +1,82 @@
+{
+  "name": "@crawlkit-sh/sdk",
+  "version": "1.0.1",
+  "description": "Official TypeScript/JavaScript SDK for CrawlKit - the modern web scraping API. Scrape websites, extract structured data with AI, capture screenshots, and collect social media data.",
+  "author": "CrawlKit <support@crawlkit.sh>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crawlkit/sdk.git"
+  },
+  "homepage": "https://crawlkit.sh",
+  "bugs": {
+    "url": "https://github.com/crawlkit/sdk/issues"
+  },
+  "keywords": [
+    "crawlkit",
+    "web-scraping",
+    "scraper",
+    "web-crawler",
+    "api-client",
+    "sdk",
+    "typescript",
+    "data-extraction",
+    "ai-extraction",
+    "llm",
+    "linkedin-scraper",
+    "instagram-scraper",
+    "screenshot",
+    "html-to-markdown",
+    "web-search",
+    "playstore",
+    "appstore",
+    "social-media",
+    "headless-browser",
+    "puppeteer"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "prettier": "^3.1.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  },
+  "sideEffects": false
+}
