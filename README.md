@@ -373,7 +373,7 @@ For detailed API documentation and guides, visit [docs.crawlkit.sh](https://docs
 
 ## Support
 
-- [GitHub Issues](https://github.com/crawlkit/sdk/issues)
+- [GitHub Issues](https://github.com/mozhn/crawlkit-sdk/issues)
 - [Documentation](https://docs.crawlkit.sh)
 - Email: support@crawlkit.sh
 
