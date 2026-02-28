@@ -17,6 +17,7 @@ Turn any website into structured data with a single API call. CrawlKit handles p
 - **Screenshots** - Capture full-page screenshots
 - **LinkedIn Scraping** - Scrape company profiles and person profiles
 - **Instagram Scraping** - Scrape profiles and posts/reels
+- **TikTok Scraping** - Scrape profiles, posts, and paginated post lists
 - **App Store Data** - Fetch reviews and details from Google Play & Apple App Store
 - **Browser Automation** - Click, type, scroll, and execute JavaScript
 - **TypeScript First** - Full type safety with comprehensive type definitions
@@ -272,6 +273,39 @@ console.log(details.description);
 const iosReviews = await crawlkit.appstore.appstoreReviews({
   appId: '123456789'
 });
+
+// Apple App Store app details
+const iosDetails = await crawlkit.appstore.appstoreDetail({
+  appId: '1492793493'
+});
+console.log(iosDetails.appName);
+```
+
+### TikTok Scraping
+
+Scrape TikTok profiles and content:
+
+```typescript
+const profile = await crawlkit.tiktok.profile({
+  username: 'nike'
+});
+
+console.log(profile.profile.username);
+console.log(profile.profile.stats?.followers);
+
+const post = await crawlkit.tiktok.content({
+  url: 'https://www.tiktok.com/@nike/video/1234567890'
+});
+
+console.log(post.post.id);
+console.log(post.post.mediaType);
+
+const posts = await crawlkit.tiktok.posts({
+  username: 'nike'
+});
+
+console.log(posts.posts.length);
+console.log(posts.pagination.hasMore);
 ```
 
 ## Error Handling
@@ -348,7 +382,11 @@ const crawlkit = new CrawlKit({
 | `instagram.content()` | 1 |
 | `appstore.playstoreReviews()` | 1 per page |
 | `appstore.playstoreDetail()` | 1 |
+| `appstore.appstoreDetail()` | 1 |
 | `appstore.appstoreReviews()` | 1 per page |
+| `tiktok.profile()` | 1 |
+| `tiktok.content()` | 1 |
+| `tiktok.posts()` | 1 per page |
 
 ## TypeScript Support
 

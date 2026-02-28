@@ -12,6 +12,16 @@ export interface AppStoreReviewsOptions {
 }
 
 /**
+ * Options for fetching App Store app details
+ */
+export interface AppStoreDetailOptions {
+  /** Language code (e.g., 'en', 'tr') */
+  lang?: string;
+  /** Request timeout in milliseconds */
+  timeout?: number;
+}
+
+/**
  * Parameters for the App Store reviews endpoint
  */
 export interface AppStoreReviewsParams {
@@ -21,6 +31,16 @@ export interface AppStoreReviewsParams {
   cursor?: string | null;
   /** Options */
   options?: AppStoreReviewsOptions;
+}
+
+/**
+ * Parameters for the App Store detail endpoint
+ */
+export interface AppStoreDetailParams {
+  /** App ID (numeric ID from App Store URL) or URL */
+  appId: string;
+  /** Options */
+  options?: AppStoreDetailOptions;
 }
 
 /**
@@ -53,6 +73,33 @@ export interface AppStoreReviewsData {
 }
 
 /**
+ * Data returned from the App Store detail endpoint
+ * Endpoint fields can vary, so this type keeps known common fields
+ * while allowing extra keys from the API.
+ */
+export interface AppStoreDetailData {
+  appId?: string;
+  appName?: string;
+  developer?: string;
+  rating?: number;
+  ratingCount?: number;
+  reviewsCount?: number;
+  version?: string;
+  description?: string;
+  icon?: string;
+  screenshots?: string[];
+  timing?: { total: number };
+  creditsUsed?: number;
+  creditsRemaining?: number;
+  [key: string]: unknown;
+}
+
+/**
  * Response from the App Store reviews endpoint
  */
 export type AppStoreReviewsResponse = ApiSuccessResponse<AppStoreReviewsData>;
+
+/**
+ * Response from the App Store detail endpoint
+ */
+export type AppStoreDetailResponse = ApiSuccessResponse<AppStoreDetailData>;

@@ -62,6 +62,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "test": "npm run build && node --test \"test/**/*.test.mjs\"",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",

@@ -4,6 +4,8 @@ import type {
   PlayStoreReviewsData,
   PlayStoreDetailParams,
   PlayStoreDetailData,
+  AppStoreDetailParams,
+  AppStoreDetailData,
   AppStoreReviewsParams,
   AppStoreReviewsData,
 } from '../types/index.js';
@@ -65,6 +67,29 @@ export class AppStoreResource extends BaseResource {
    */
   async playstoreDetail(params: PlayStoreDetailParams): Promise<PlayStoreDetailData> {
     return this.post<PlayStoreDetailData>('/v1/crawl/playstore/detail', params);
+  }
+
+  /**
+   * Fetch Apple App Store app details
+   *
+   * @param params - App detail parameters
+   * @returns App information including metadata, ratings, and media
+   * @throws {CrawlKitError} On API errors
+   *
+   * @example
+   * ```typescript
+   * const result = await crawlkit.appstore.appstoreDetail({
+   *   appId: '1492793493',
+   *   options: { lang: 'en' }
+   * });
+   * console.log(result.appName);
+   * console.log(result.rating);
+   * ```
+   *
+   * @costs 1 credit
+   */
+  async appstoreDetail(params: AppStoreDetailParams): Promise<AppStoreDetailData> {
+    return this.post<AppStoreDetailData>('/v1/crawl/appstore/detail', params);
   }
 
   /**

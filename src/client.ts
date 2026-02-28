@@ -2,6 +2,7 @@ import { CrawlResource } from './resources/crawl.js';
 import { LinkedInResource } from './resources/linkedin.js';
 import { InstagramResource } from './resources/instagram.js';
 import { AppStoreResource } from './resources/appstore.js';
+import { TikTokResource } from './resources/tiktok.js';
 import { AuthenticationError } from './errors/index.js';
 import type { ResourceConfig } from './resources/base.js';
 import type {
@@ -74,6 +75,10 @@ export interface CrawlKitConfig {
  * const company = await crawlkit.linkedin.company({
  *   url: 'https://linkedin.com/company/openai'
  * });
+ *
+ * const profile = await crawlkit.tiktok.profile({
+ *   username: 'nike'
+ * });
  * ```
  */
 export class CrawlKit {
@@ -97,6 +102,12 @@ export class CrawlKit {
    * Provides Google Play Store and Apple App Store data
    */
   public readonly appstore: AppStoreResource;
+
+  /**
+   * TikTok scraping operations
+   * Provides profile, content, and paginated posts scraping
+   */
+  public readonly tiktok: TikTokResource;
 
   /**
    * Create a new CrawlKit client
@@ -143,6 +154,7 @@ export class CrawlKit {
     this.linkedin = new LinkedInResource(resourceConfig);
     this.instagram = new InstagramResource(resourceConfig);
     this.appstore = new AppStoreResource(resourceConfig);
+    this.tiktok = new TikTokResource(resourceConfig);
   }
 
   /**

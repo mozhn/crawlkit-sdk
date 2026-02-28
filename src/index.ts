@@ -6,7 +6,7 @@
  * - AI-powered structured data extraction
  * - Web search
  * - Full-page screenshots
- * - Social media scraping (LinkedIn, Instagram)
+ * - Social media scraping (LinkedIn, Instagram, TikTok)
  * - App store data (Google Play, Apple App Store)
  *
  * @example
@@ -145,9 +145,35 @@ export type {
   PlayStoreDetailResponse,
 
   // App Store
+  AppStoreDetailOptions,
+  AppStoreDetailParams,
   AppStoreReviewsOptions,
   AppStoreReviewsParams,
   AppStoreReview,
+  AppStoreDetailData,
+  AppStoreDetailResponse,
   AppStoreReviewsData,
   AppStoreReviewsResponse,
+
+  // TikTok
+  TikTokOptions,
+  TikTokProfileParams,
+  TikTokPostParams,
+  TikTokPostsParams,
+  TikTokProfileStats,
+  TikTokProfile,
+  TikTokPostAuthor,
+  TikTokPostMusic,
+  TikTokPostVideo,
+  TikTokPostImage,
+  TikTokPostStats,
+  TikTokHashtag,
+  TikTokPost,
+  TikTokPostsPagination,
+  TikTokProfileData,
+  TikTokPostData,
+  TikTokPostsData,
+  TikTokProfileResponse,
+  TikTokPostResponse,
+  TikTokPostsResponse,
 } from './types/index.js';

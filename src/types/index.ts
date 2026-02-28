@@ -112,9 +112,37 @@ export type {
 
 // App Store types
 export type {
+  AppStoreDetailOptions,
+  AppStoreDetailParams,
   AppStoreReviewsOptions,
   AppStoreReviewsParams,
   AppStoreReview,
+  AppStoreDetailData,
+  AppStoreDetailResponse,
   AppStoreReviewsData,
   AppStoreReviewsResponse,
 } from './appstore.js';
+
+// TikTok types
+export type {
+  TikTokOptions,
+  TikTokProfileParams,
+  TikTokPostParams,
+  TikTokPostsParams,
+  TikTokProfileStats,
+  TikTokProfile,
+  TikTokPostAuthor,
+  TikTokPostMusic,
+  TikTokPostVideo,
+  TikTokPostImage,
+  TikTokPostStats,
+  TikTokHashtag,
+  TikTokPost,
+  TikTokPostsPagination,
+  TikTokProfileData,
+  TikTokPostData,
+  TikTokPostsData,
+  TikTokProfileResponse,
+  TikTokPostResponse,
+  TikTokPostsResponse,
+} from './tiktok.js';
