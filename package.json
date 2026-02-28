@@ -1,6 +1,6 @@
 {
   "name": "@crawlkit-sh/sdk",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Official TypeScript/JavaScript SDK for CrawlKit - the modern web scraping API. Scrape websites, extract structured data with AI, capture screenshots, and collect social media data.",
   "author": "CrawlKit <support@crawlkit.sh>",
   "license": "MIT",
